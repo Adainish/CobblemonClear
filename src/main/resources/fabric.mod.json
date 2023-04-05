@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "CobblemonClear",
+  "version": "${version}",
+  "name": "CobblemonClear",
+  "description": "Adds a Clear System for Dropped Items and Wild Pokemon to Cobblemon",
+  "authors": [
+    "Winglet"
+  ],
+  "contact": {
+    "repo": "https://github.com/wingl/CobblemonClear"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/CobblemonClear/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "client": [
+      "io.github.adainish.cobblemonclear.client.CobblemonClearClient"
+    ],
+    "main": [
+      "io.github.adainish.cobblemonclear.CobblemonClear"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
