@@ -29,12 +29,17 @@ public class ItemWiper {
         this.lastWipe = 0;
         this.warningIntervals = CobblemonClear.config.warningIntervalsSecondsItems;
         this.task = Task.builder().infinite().execute(this::attemptExecution).interval(20).build();
-
+        CobblemonClear.getLog().warn("Item wiper should have initialised!");
     }
 
     public void shutdown() {
+        CobblemonClear.getLog().warn("Shutting down item wiper task");
         this.task.setExpired();
+        if (this.task.isExpired())
+            CobblemonClear.getLog().warn("Task marked for expiration!");
         this.task = null;
+        if (this.task == null)
+            CobblemonClear.getLog().warn("Task marked as null... Preparing for new wiper instances!");
     }
 
     public boolean shouldWipe() {

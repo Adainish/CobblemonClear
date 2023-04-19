@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "CobblemonClear",
+  "id": "cobblemonclear",
   "version": "${version}",
   "name": "CobblemonClear",
   "description": "Adds a Clear System for Dropped Items and Wild Pokemon to Cobblemon",
@@ -22,8 +22,8 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": ">=0.14.18",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "1.19.2"
   }
 }
