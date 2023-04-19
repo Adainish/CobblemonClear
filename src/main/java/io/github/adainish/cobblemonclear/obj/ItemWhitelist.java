@@ -1,9 +1,9 @@
 package io.github.adainish.cobblemonclear.obj;
 
-import dev.architectury.registry.item.ItemPropertiesRegistry;
-import net.minecraft.entity.ItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,18 +15,39 @@ public class ItemWhitelist
     public ItemWhitelist()
     {}
 
-    public List<Item> convertedWhiteListedItems()
-    {
+    public List<Item> convertedWhiteListedItems() {
         List<Item> items = new ArrayList<>();
-        for (String s:whitelistedItemIDs) {
-            //pull item from registry and add to whitelist
+        for (String s : whitelistedItemIDs) {
+            Item i = null;
+            ResourceLocation identifier = new ResourceLocation(s);
+            if (Registry.ITEM.getOptional(identifier).isPresent())
+                i = Registry.ITEM.getOptional(identifier).get();
+            if (i != null)
+                items.add(i);
         }
         return items;
     }
     public boolean isWhiteListed(ItemEntity itemEntity)
     {
-        Item item = itemEntity.getStack().getItem();
+        Item item = itemEntity.getItem().getItem();
         return convertedWhiteListedItems().contains(item);
     }
+
+
+    public static Item getItemFromString(String id)
+    {
+        ResourceLocation location = new ResourceLocation(id);
+        return Registry.ITEM.get(location);
+    }
+
+    public boolean isWhiteListed(String string)
+    {
+        for (String s:whitelistedItemIDs) {
+            if (string.equalsIgnoreCase(s))
+                return true;
+        }
+        return false;
+    }
+
 
 }

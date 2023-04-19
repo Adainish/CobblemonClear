@@ -4,9 +4,7 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Species;
 import io.github.adainish.cobblemonclear.util.Util;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class PokemonWhitelist
@@ -16,6 +14,16 @@ public class PokemonWhitelist
     public PokemonWhitelist()
     {
 
+    }
+
+
+    public boolean isWhiteListed(String st)
+    {
+        for (String s:whitelistedPokemon) {
+            if (s.equalsIgnoreCase(st))
+                return true;
+        }
+        return false;
     }
 
     public List<Species> getWhiteListedSpeciesList()
