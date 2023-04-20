@@ -74,11 +74,10 @@ public class CobblemonClear implements ModInitializer
         //do data set up
         CobblemonEvents.SERVER_STARTED.subscribe(Priority.NORMAL, minecraftServer -> {
             setServer(minecraftServer);
+            initDirs();
+            reload();
             return Unit.INSTANCE;
         });
-
-        initDirs();
-        reload();
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(Command.getCommand());

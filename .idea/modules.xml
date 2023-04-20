@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CobblemonClear.main.iml" filepath="$PROJECT_DIR$/.idea/modules/CobblemonClear.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CobblemonClear.test.iml" filepath="$PROJECT_DIR$/.idea/modules/CobblemonClear.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.github.adainish.CobblemonClear.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.github.adainish.CobblemonClear.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.github.adainish.CobblemonClear.test.iml" filepath="$PROJECT_DIR$/.idea/modules/io.github.adainish.CobblemonClear.test.iml" />
     </modules>
   </component>
 </project>
