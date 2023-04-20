@@ -27,12 +27,13 @@ public class WipeManager
                 CobblemonClear.getLog().warn("Pokemon Wiper exists, shutting down before continuing");
                 this.pokemonWiper.shutdown();
             }
-            CobblemonClear.getLog().warn("Initialising Item Wiper");
-            this.itemWiper = new ItemWiper();
             CobblemonClear.getLog().warn("Initialising Pokemon Wiper");
             this.pokemonWiper = new PokemonWiper();
-            this.itemWiper.init();
             this.pokemonWiper.init();
+
+            CobblemonClear.getLog().warn("Initialising Item Wiper");
+            this.itemWiper = new ItemWiper();
+            this.itemWiper.init();
 
         } else {
             CobblemonClear.getLog().error("Failed to initialise Cobblemon Clear, the config failed to load or contained mismatched data");
