@@ -14,6 +14,9 @@ import java.util.List;
 
 public class Config
 {
+    public String prefix = "&c&l[&b&lCobbleClear&c&l]";
+    public String splitter = " » ";
+
     public ItemWhitelist itemWhitelist = new ItemWhitelist();
     public String itemWarningMessage = "&c&lA Item Wipe will be occurring in %time%";
     public List<Integer> warningIntervalsSecondsItems = new ArrayList<>(Arrays.asList(10, 20, 30));

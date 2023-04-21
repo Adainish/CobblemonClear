@@ -1,5 +1,6 @@
 package io.github.adainish.cobblemonclear.util;
 
+import io.github.adainish.cobblemonclear.CobblemonClear;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -39,19 +40,19 @@ public class TextUtil
 
     public static final TextColor BLUE = TextColor.parseColor("#00AFFC");
     public static final TextColor ORANGE = TextColor.parseColor("#FF6700");
-    private static final MutableComponent PLUGIN_PREFIX = Component.literal(Util.formattedString("&c&l[&b&lCobbleClear&c&l]")).setStyle(Style.EMPTY.withColor(BLUE));
+    private static final MutableComponent PLUGIN_PREFIX = Component.literal(Util.formattedString(CobblemonClear.config.prefix)).setStyle(Style.EMPTY.withColor(BLUE));
 
-    private static final MutableComponent MESSAGE_PREFIX = getPluginPrefix().append(Component.literal(" » ").setStyle(Style.EMPTY.withColor(ORANGE)));
+    private static final MutableComponent MESSAGE_PREFIX = getPluginPrefix().append(Component.literal(CobblemonClear.config.splitter).setStyle(Style.EMPTY.withColor(ORANGE)));
 
     /**
-     * @return a copy of the coloured OutBreaks TextComponent
+     * @return a copy of the coloured CobbleClear Prefix TextComponent
      */
     public static MutableComponent getPluginPrefix() {
         return PLUGIN_PREFIX.copy();
     }
 
     /**
-     * @return a copy of the coloured OutBreaks prefix
+     * @return a copy of the coloured CobbleClear message splitter
      */
     public static MutableComponent getMessagePrefix() {
         return MESSAGE_PREFIX.copy();
