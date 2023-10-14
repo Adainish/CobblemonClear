@@ -1,6 +1,6 @@
 package io.github.adainish.cobblemonclear.obj;
 
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
@@ -19,9 +19,10 @@ public class ItemWhitelist
         List<Item> items = new ArrayList<>();
         for (String s : whitelistedItemIDs) {
             Item i = null;
+
             ResourceLocation identifier = new ResourceLocation(s);
-            if (Registry.ITEM.getOptional(identifier).isPresent())
-                i = Registry.ITEM.getOptional(identifier).get();
+            if (BuiltInRegistries.ITEM.getOptional(identifier).isPresent())
+                i = BuiltInRegistries.ITEM.getOptional(identifier).get();
             if (i != null)
                 items.add(i);
         }
@@ -37,7 +38,7 @@ public class ItemWhitelist
     public static Item getItemFromString(String id)
     {
         ResourceLocation location = new ResourceLocation(id);
-        return Registry.ITEM.get(location);
+        return BuiltInRegistries.ITEM.get(location);
     }
 
     public boolean isWhiteListed(String string)
