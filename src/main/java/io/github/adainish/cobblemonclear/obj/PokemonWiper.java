@@ -103,7 +103,7 @@ public class PokemonWiper
                             continue;
                         }
                     }
-                    e.kill();
+                    e.discard();
                     wipedCount.getAndIncrement();
                 }
             }

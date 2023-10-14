@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.adainish"
-version = "1.0-SNAPSHOT"
+version = "1.1-SNAPSHOT"
 
 architectury {
     platformSetupLoomIde()
@@ -30,12 +30,13 @@ repositories {
 dependencies {
     minecraft("com.mojang:minecraft:1.19.2")
     mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:0.14.14")
+    modImplementation("net.fabricmc:fabric-loader:0.14.21")
 
-    modImplementation(fabricApi.module("fabric-command-api-v2", "0.75.1+1.19.2"))
-    modImplementation("dev.architectury", "architectury-fabric", "6.5.69")
-    modImplementation("com.cobblemon:fabric:1.3.1+1.19.2-SNAPSHOT")
-    implementation("ca.landonjw.gooeylibs:fabric:3.0.0-1.19.2-20230412.185927-14")
+//    modImplementation(fabricApi.module("fabric-command-api-v2", "0.89.3+1.20.1"))
+    modImplementation("net.fabricmc.fabric-api:fabric-api:0.89.3+1.20.1")
+//    modImplementation("dev.architectury", "architectury-fabric", "6.5.69")
+    modImplementation("com.cobblemon:fabric:1.4.0+1.20.1-SNAPSHOT")
+    implementation("ca.landonjw.gooeylibs:fabric:3.0.0-1.20.1-SNAPSHOT")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")

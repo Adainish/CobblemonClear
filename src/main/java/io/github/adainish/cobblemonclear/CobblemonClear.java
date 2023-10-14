@@ -1,13 +1,8 @@
 package io.github.adainish.cobblemonclear;
 
-import com.cobblemon.mod.common.Cobblemon;
-import com.cobblemon.mod.common.api.Priority;
-import com.cobblemon.mod.common.api.events.CobblemonEvents;
-import com.cobblemon.mod.fabric.net.FabricServerNetworkContext;
 import io.github.adainish.cobblemonclear.command.Command;
 import io.github.adainish.cobblemonclear.config.Config;
 import io.github.adainish.cobblemonclear.manager.WipeManager;
-import kotlin.Unit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
@@ -72,11 +67,10 @@ public class CobblemonClear implements ModInitializer
                 .replace("%y", YEAR)
         );
         //do data set up
-        CobblemonEvents.SERVER_STARTED.subscribe(Priority.NORMAL, minecraftServer -> {
+        ServerLifecycleEvents.SERVER_STARTED.register(minecraftServer -> {
             setServer(minecraftServer);
             initDirs();
             reload();
-            return Unit.INSTANCE;
         });
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
