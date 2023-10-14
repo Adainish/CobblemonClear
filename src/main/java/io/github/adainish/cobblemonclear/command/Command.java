@@ -8,6 +8,7 @@ import io.github.adainish.cobblemonclear.util.Util;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -61,7 +62,7 @@ public class Command {
                                         {
                                             throw new Exception("No item in hand");
                                         }
-                                        ResourceLocation location = Registry.ITEM.getKey(stack.getItem());
+                                        ResourceLocation location = BuiltInRegistries.ITEM.getKey(stack.getItem());
                                         if (location != null) {
                                             //check if items isn't already whitelisted
                                             if (!CobblemonClear.config.itemWhitelist.isWhiteListed(location.toString())) {

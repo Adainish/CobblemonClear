@@ -103,8 +103,10 @@ public class PokemonWiper
                             continue;
                         }
                     }
-                    e.discard();
-                    wipedCount.getAndIncrement();
+                    if(!e.isBusy()) {
+                        e.discard();
+                        wipedCount.getAndIncrement();
+                    }
                 }
             }
         }
