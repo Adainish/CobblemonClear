@@ -103,7 +103,7 @@ public class PokemonWiper
                             continue;
                         }
                     }
-                    if(!e.isBusy()) {
+                    if(!e.isBusy() && e.getOwnerUUID() == null && !e.getPokemon().getShiny()) {
                         e.discard();
                         wipedCount.getAndIncrement();
                     }
