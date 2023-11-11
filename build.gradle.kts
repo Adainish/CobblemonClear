@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.adainish"
-version = "1.1.1-SNAPSHOT"
+version = "1.1.2-SNAPSHOT"
 
 architectury {
     platformSetupLoomIde()
